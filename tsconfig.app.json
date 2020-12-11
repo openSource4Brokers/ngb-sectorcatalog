@@ -6,12 +6,7 @@
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts",
-    "./src/app/modules/sector-catalog/_models/FolderDescription.ts",
-    "./src/app/modules/sector-catalog/_models/ICatalog.ts",
-    "./src/app/modules/sector-catalog/_models/Item.ts",
-    "./src/app/modules/sector-catalog/_models/Folder.ts",
-    "./src/app/modules/sector-catalog/_models/Company.ts"
+    "src/polyfills.ts"
   ],
   "include": [
     "src/**/*.d.ts"

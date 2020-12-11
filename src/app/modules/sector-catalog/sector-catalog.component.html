@@ -14,25 +14,28 @@
           </div>
 
           <div *ngIf="federations$">
-            <!-- <pre class="card card-block card-header">{{ federations$|json }}</pre> -->
+            <!-- <pre class="card card-block card-header">{{ federations$ | json }}</pre> -->
             <div *ngFor="let item of federations$">
-              {{ item.Code }} - {{ item.Name }} ({{ item.Folders.length }})
+              {{ item.Code }} - {{ item.Name }} ({{ item.Folders.length }} folders)
             </div>
           </div>
         </tab>
 
         <tab heading="Insurers">
           <div *ngIf="insurers$">
-            <!-- <pre class="card card-block card-header">{{ insurers$ |json }}</pre> -->
+            <!-- <pre class="card card-block card-header">{{ insurers$ | json }}</pre> -->
             <div *ngFor="let item of insurers$">
-              {{ item.Code }} - {{ item.Name }} ({{ item.Folders.length }})
+              <button (click)="checkGenerali(item)">check</button> - {{ item.Name }} ({{ item.Folders.length }} folders)
             </div>
           </div>
         </tab>
 
         <tab heading="All (Json)">
           <div *ngIf="allCatalogs$">
-            <pre class="card card-block card-header">{{ allCatalogs$ | json}}</pre>
+            <!-- <pre class="card card-block card-header">{{ allCatalogs$ | json}}</pre> -->
+            <div *ngFor="let item of allCatalogs$">
+              {{ item.Code }} - {{ item.Name }} ({{ item.Folders.length }} folders)
+            </div>
           </div>
         </tab>
       </tabset>

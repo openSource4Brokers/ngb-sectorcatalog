@@ -19,8 +19,6 @@ import { SectorCatalogComponent } from './sector-catalog.component';
 import { CatalogDetailsComponent } from './catalog-details/catalog-details.component';
 import { CatalogsCardListComponent } from './catalogs-card-list/catalogs-card-list.component';
 
-import { CatalogService } from './services/catalog.service';
-
 @NgModule({
   declarations: [
     SectorCatalogComponent,
@@ -42,6 +40,6 @@ import { CatalogService } from './services/catalog.service';
     ReactiveFormsModule,
     TabsModule.forRoot()
   ],
-  providers: [CatalogService, BsModalRef],
+  providers: [BsModalRef],
 })
 export class SectorCatalogModule {}

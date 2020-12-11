@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { noop } from 'rxjs';
 import { createHttpObservable } from './_common/util';
-import { map } from 'rxjs/operators';
+import { map, shareReplay, tap } from 'rxjs/operators';
 
-import { Company } from './_models/Company';
+import { environment } from 'src/environments/environment';
+import { Company } from './_models/ICatalog';
 
 @Component({
   selector: 'app-sector-catalog',
@@ -15,22 +16,28 @@ export class SectorCatalogComponent implements OnInit {
 
   federations$: Company[];
   insurers$: Company[];
+  insurer$: Company[];
   allCatalogs$: Company[];
+
+  whateverResult$: any;
 
   constructor() { }
 
   ngOnInit() {
     // tslint:disable-next-line: max-line-length
     const sectorCatalogUrl =
-      'http://app.sectorcatalog.be/SectorCatalogBE/feed/v2/digestedcatalogItems?format=json&SecureGuid=D4114B06-2492-433B-A4E1-9F89017F6D89';
+      'http://app.sectorcatalog.be/SectorCatalogBE/feed/v2/digestedcatalogItems?format=json&SecureGuid='
+      + environment.brokerKey;
 
     const http$ = createHttpObservable(sectorCatalogUrl);
-    const whatever$ = http$
+    this.whateverResult$ = http$
       .pipe(
-        map(res => Object.values(res["Companies"]))
+        tap(() => console.log('HTTP request executed')),
+        map(res => Object.values(res["Companies"])),
+        shareReplay()
       );
 
-    whatever$.subscribe(
+    this.whateverResult$.subscribe(
       (res: Company[]) => {
         console.log(res.length);
         this.allCatalogs$ = res;
@@ -47,5 +54,21 @@ export class SectorCatalogComponent implements OnInit {
         console.log('number of insurers: ', this.insurers$.length);
       }
     );
+  }
+
+  checkGenerali(choosen: Company) {
+    console.log(choosen);
+    /* this.whateverResult$.subscribe(
+      (res: Company[]) => {
+        this.insurer$ = res
+          .filter(res => res.Folders[0].FolderDescription.NL == 'NL');
+      },
+      noop,
+      () => {
+        console.log('completed');
+        console.log('found: ', this.insurer$.length);
+        console.log(this.insurer$);
+      }
+    ); */
   }
 }
