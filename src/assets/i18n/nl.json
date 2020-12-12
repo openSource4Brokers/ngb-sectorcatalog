@@ -17,34 +17,27 @@
   },
 
   "HOME": {
-    "Carousel-Image1": "assets/images/carousel/corona1.jfif",
+    "Carousel-Image1": "assets/images/carousel/SC_logo_grey.png",
     "Carousel-Alt1": "eerste slide",
-    "Carousel-Link1": "/corona",
+    "Carousel-Link1": "/sector-catalog",
     "Carousel-WindowLink1": "",
-    "Carousel-Label1": "Corona",
-    "Carousel-Info1": "Covid19",
+    "Carousel-Label1": "Makelaar?",
+    "Carousel-Info1": "Ontdek en integreer eenvoudig de producten van de verschillende verzekeringsmaatschappijen op de website van uw klant./sector-catalog",
     "Carousel-Button1": "Ga naar de pagina",
 
-    "Carousel-Image2": "assets/images/carousel/corona2.jfif",
+    "Carousel-Image2": "assets/images/carousel/SC_logo_grey.png",
     "Carousel-Alt2": "tweede slide",
-    "Carousel-Link2": "/corona",
-    "Carousel-Label2": "Covid19",
-    "Carousel-Info2": "Corona",
+    "Carousel-Link2": "/sector-catalog",
+    "Carousel-Label2": "Verzekeraar?",
+    "Carousel-Info2": "Publiceer alle documentatie over uw producten op het platform.",
     "Carousel-Button2": "Probeer de API",
 
-    "Carousel-Image3": "assets/images/carousel/corona3.jfif",
+    "Carousel-Image3": "assets/images/carousel/SC_logo_grey.png",
     "Carousel-Alt3": "derde slide",
-    "Carousel-Link3": "/corona",
-    "Carousel-Label3": "Corona",
-    "Carousel-Info3": "Covid19",
-    "Carousel-Button3": "Test de demo",
-
-    "Carousel-Image4": "assets/images/carousel/corona4.jfif",
-    "Carousel-Alt4": "vierde slide",
-    "Carousel-Link4": "/corona",
-    "Carousel-Label4": "Covid19",
-    "Carousel-Info4": "Corona",
-    "Carousel-Button4": "Corona API"
+    "Carousel-Link3": "/sector-catalog",
+    "Carousel-Label3": "Ontwikkelaar?",
+    "Carousel-Info3": "Integreer de nieuwe Folders op de website van de makelaar met behulp van een enkele code die alle noodzakelijke informatie bevat.",
+    "Carousel-Button3": "Test de demo"
   },
 
   "ABOUT": {
